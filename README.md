@@ -1,2 +1,2 @@
 # Application
-빠른 안심콜 (구글 클라우드 API 사용 / EXPO 사용
+구글 클라우드 API를 사용한 글자 인식 앱
