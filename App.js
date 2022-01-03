@@ -36,7 +36,7 @@ export default function App({ navigation})  {
 
   const googleapi = async (base64: String) => {
     try {
-      const response = await fetch('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyCXTH-zsk8Nnkr-vRDst44PbOjKEUSMM3Y', { method: 'POST', body: JSON.stringify({ requests: [ { image: { content: base64, }, features: [ { type: 'TEXT_DETECTION', maxResults: 5 }, { type: 'DOCUMENT_TEXT_DETECTION', maxResults: 5 } ],},],}),});
+      const response = await fetch('https://vision.googleapis.com/v1/images:annotate?key=key', { method: 'POST', body: JSON.stringify({ requests: [ { image: { content: base64, }, features: [ { type: 'TEXT_DETECTION', maxResults: 5 }, { type: 'DOCUMENT_TEXT_DETECTION', maxResults: 5 } ],},],}),});
       const json = await response.json();
       let phoneNumber = '';
       setData(json.responses[0].fullTextAnnotation.text.replace('코로나19', '').replace(/\D/g,''));
